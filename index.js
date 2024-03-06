@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import router from "./router.js";
 
 const PORT = 5000;
 const DB_URL = "mongodb+srv://user:user@cluster0.2ulrveh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -7,11 +8,7 @@ const DB_URL = "mongodb+srv://user:user@cluster0.2ulrveh.mongodb.net/?retryWrite
 const app = express();
 
 app.use(express.json())
-
-app.post('/', (req, res) => {
-    console.log(req.body);
-    res.status(200).json('I am alive!!')
-})
+app.use('/', router)
 
 async function startApp(){
     try {
