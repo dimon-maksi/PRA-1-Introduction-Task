@@ -35,7 +35,7 @@ class HomeworkController {
         }
     }
     async update(req, res) {
-        try {udentService.update(req.body);
+        try {HomeworkService.update(req.body);
             return res.json(updatedHomework);
         } catch (e) {
             res.status(500).json(e.message)

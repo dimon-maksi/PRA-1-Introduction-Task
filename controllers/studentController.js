@@ -27,7 +27,7 @@ class StudentController {
         }
     }
     async update(req, res) {
-        try {udentService.update(req.body);
+        try {StudentService.update(req.body);
             return res.json(updatedStudent);
         } catch (e) {
             res.status(500).json(e.message)
